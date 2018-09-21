@@ -1,0 +1,24 @@
+{
+  "name": "create-jsy",
+  "version": "0.0.4",
+  "description": "Init a priate JSY project without any prompts!",
+  "keywords": [
+    "npm init",
+    "JSY"
+  ],
+  "license": "BSD-2-Clause",
+  "author": "Shane Holloway <shane.holloway@ieee.org>",
+  "homepage": "https://github.com/shanewholloway/npm-create-jsy#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shanewholloway/npm-create-jsy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shanewholloway/npm-create-jsy/issues"
+  },
+  "bin": "create-jsy.js",
+  "main": "create-jsy.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {}
+}
