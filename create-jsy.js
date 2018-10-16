@@ -55,7 +55,7 @@ async function validate(variant) {
 }
 
 if (module === require.main) {
-  const variant = process.argv.slice(-1).pop() || 'basic'
+  const variant = process.argv.slice(2).pop() || 'basic'
   create_jsy(variant, 'package.json')
     .then(() => console.log('\nDone.\n'))
     .catch(console.error)
