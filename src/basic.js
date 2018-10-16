@@ -1,3 +1,5 @@
+const __doc__ = `JSY & Rollup basic config`
+
 const pkg_default = {
   private: true,
   version: '0.0.0',
@@ -65,6 +67,7 @@ const npm_dependencies = null
 const npm_dev_dependencies = 'rollup rollup-plugin-jsy-lite'
 
 Object.assign(exports, {
+  __doc__,
   pkg_default, rollup_config, gitignore,
   source_files: {
     'code/index.jsy': code_index,

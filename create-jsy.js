@@ -54,10 +54,39 @@ async function validate(variant) {
   await mx.shell_exec('node ./cjs/index.js')
 }
 
+function show_help() {
+  console.log()
+  console.log('Create a JSY project without prompts:')
+  console.log()
+  console.log('   $ npm init jsy')
+  console.log()
+  console.log('or:')
+  console.log()
+  console.log('   $ npm init jsy «variant»')
+  console.log()
+  console.log('Variants:')
+  for (const [name, module] of Object.entries(variantsByName)) {
+    if (module.__doc__)
+      console.log(`  * '${name}' — ${module.__doc__}`)
+    else console.log(`  * '${name}'`)
+  }
+  console.log()
+}
+
 if (module === require.main) {
   const variant = process.argv.slice(2).pop() || 'basic'
-  create_jsy(variant, 'package.json')
-    .then(() => console.log('\nDone.\n'))
-    .catch(console.error)
+  if ('--help' === variant || '-h' === variant || 'help' === variant) {
+    show_help()
+    process.exit(0)
+
+  } else if (! variantsByName[variant]) {
+    console.error(`\nUnknown JSY template variant '${variant}'\n`)
+    process.exit(1)
+
+  } else {
+    create_jsy(variant, 'package.json')
+      .then(() => console.log('\nDone.\n'))
+      .catch(console.error)
+  }
 }
 

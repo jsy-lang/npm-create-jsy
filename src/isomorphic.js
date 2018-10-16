@@ -1,3 +1,5 @@
+const __doc__ = `JSY & Rollup config with conditional compilation for NodeJS and Web platforms`
+
 const basic = require('./basic')
 
 const rollup_config = `\
@@ -84,6 +86,7 @@ console.log @
 `
 
 Object.assign(exports, basic, {
+  __doc__,
   rollup_config,
   source_files: {
     'code/index.jsy': code_index,
