@@ -25,9 +25,9 @@ const sourcemap = true
 const external = []
 const plugins = [rpi_jsy()]
 
-// Allow Node module resolution -- https://github.com/rollup/rollup-plugin-node-resolve
-/// import rpi_resolve from 'rollup-plugin-node-resolve'
-/// plugins.push(rpi_resolve({main: true, browser: true, modules: true}))
+// Allow Node module resolution -- https://github.com/rollup/plugins/tree/master/packages/node-resolve#readme
+/// import rpi_resolve from '@rollup/plugin-node-resolve'
+/// plugins.push(rpi_resolve())
 
 
 add_jsy('index')

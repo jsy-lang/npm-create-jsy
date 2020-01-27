@@ -15,9 +15,9 @@ const external = []
 
 const plugins = []
 
-// Allow Node module resolution -- https://github.com/rollup/rollup-plugin-node-resolve
-/// import rpi_resolve from 'rollup-plugin-node-resolve'
-/// plugins.push(rpi_resolve({main: true, browser: true, modules: true}))
+// Allow Node module resolution -- https://github.com/rollup/plugins/tree/master/packages/node-resolve#readme
+/// import rpi_resolve from '@rollup/plugin-node-resolve'
+/// plugins.push(rpi_resolve())
 
 const plugins_nodejs = [ rpi_jsy({defines: {PLAT_NODEJS: true}}) ].concat(plugins)
 const plugins_web = [ rpi_jsy({defines: {PLAT_WEB: true}}) ].concat(plugins)
