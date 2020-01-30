@@ -1,9 +1,10 @@
 {
   "name": "create-jsy",
-  "version": "1.1.3",
+  "version": "1.2.0",
   "description": "Init a priate JSY project without any prompts!",
   "keywords": [
     "npm init",
+    "npx",
     "JSY"
   ],
   "license": "BSD-2-Clause",
@@ -17,8 +18,19 @@
     "url": "https://github.com/jsy-lang/npm-create-jsy/issues"
   },
   "bin": "create-jsy.js",
-  "main": "create-jsy.js",
+  "main": "cjs/create-jsy.js",
+  "module": "esm/create-jsy.mjs",
   "dependencies": {},
-  "devDependencies": {},
-  "scripts": {}
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "create-from-gh": "^0.4.0",
+    "rollup": "^1.30.1"
+  },
+  "scripts": {
+    "clean": "rm -rf ./cjs/* ./esm/*",
+    "build": "rollup --config",
+    "watch": "npm -s run build -- --watch",
+    "pretest": "npm -s run build",
+    "test": "true"
+  }
 }
