@@ -2,7 +2,8 @@
 const {create_jsy} = require('./cjs/create-jsy.js')
 
 function main([template_name, destination]) {
-  if (template_name.startsWith('.')) {
+
+  if (template_name && template_name.startsWith('.')) {
     destination = template_name
     template_name = null
   }
